@@ -3,7 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth, logInWithEmailAndPassword } from '../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import '../styles/Login.css';
+import { useQuery } from '@apollo/client';
+import { GET_IMA_SERVICES } from '../graphql/queries';
 function Login() {
+  const { error, data } = useQuery(GET_IMA_SERVICES);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [user, loading] = useAuthState(auth);
@@ -14,10 +17,13 @@ function Login() {
       return;
     }
     if (user) navigate('/inicio');
-  }, [user, loading]);
+    if (error) return <p>Error :(</p>;
+    console.log(data);
+  }, [user, data, loading]);
   return (
     <div className="login-card">
       <form className="login-form">
+        {/* <div>{data.imaServices[0].clientName}</div> */}
         <h2>Inicio de sesión</h2>
         <input
           type="text"
@@ -34,19 +40,23 @@ function Login() {
           placeholder="Contraseña"
         />
         <div>
-          <Link to="/cambiar-credenciales">¿Se te olvidó la contraseña?</Link>
+          <Link to="/cambiar-credenciales" className="text-secondary">
+            ¿Se te olvidó la contraseña?
+          </Link>
         </div>
         <div className="d-grid">
           <button
             type="submit"
             onClick={() => logInWithEmailAndPassword(email, password)}
-            className="btn btn-primary"
+            className="btn btn-danger"
           >
             Ingresar
           </button>
         </div>
-        <div className="mt-2">
-          <Link to="/registro">Registro</Link>
+        <div>
+          <Link to="/registro" className="text-secondary">
+            Registro
+          </Link>
         </div>
       </form>
     </div>

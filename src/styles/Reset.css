@@ -1,30 +1,72 @@
-.reset {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.reset__container {
-  display: flex;
-  flex-direction: column;
+.reset-card {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin: 0 20px;
+  padding: 70px 30px 44px;
+  border-radius: 1.25rem;
+  background: #fff;
   text-align: center;
-  background-color: #dcdcdc;
-  padding: 30px;
 }
-.reset__textBox {
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 10px;
+
+@media (width >= 500px) {
+  .reset-card {
+    margin: 0;
+    width: 400px;
+  }
 }
-.reset__btn {
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 10px;
-  border: none;
-  color: white;
-  background-color: black;
+
+.reset-card > h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0 0 12px;
 }
-.reset div {
-  margin-top: 7px;
+
+.reset-card > h3 {
+  color: rgba(0, 0, 0, 0.38);
+  margin: 0 0 30px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.reset-form {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.reset-form > input,
+.reset-form > button {
+  width: 100%;
+  height: 56px;
+}
+
+.reset-form > input {
+  border: 2px solid #ebebeb;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0 16px;
+}
+
+.reset-form > button {
+  cursor: pointer;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  border-radius: 0.5rem;
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 2px;
+  transition: all 0.375s;
+}
+
+.reset-form > a {
+  font-size: 1rem;
+  text-align: left;
+  text-decoration: none;
+  margin-bottom: 6px;
 }

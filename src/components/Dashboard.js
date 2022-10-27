@@ -3,7 +3,10 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Dashboard.css';
 import { auth, logout } from '../firebase';
+// import { useQuery } from '@apollo/client';
+// import { GET_EMPLOYEE, } from '../graphql/queries';
 function Dashboard() {
+  // const { error, data } = useQuery(GET_EMPLOYEE);
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {

@@ -18,36 +18,43 @@ function Register() {
     if (user) navigate('/inicio', { replace: true });
   }, [user, loading]);
   return (
-    <div className="register">
-      <div className="register__container">
+    <div className="register-card">
+      <form className="register-form">
+        <h2>Registro</h2>
         <input
           type="text"
-          className="register__textBox"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Full Name"
+          className="form-control"
+          placeholder="Nombre completo"
         />
         <input
           type="text"
-          className="register__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
+          className="form-control"
+          placeholder="Correo electrónico"
         />
         <input
           type="password"
-          className="register__textBox"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
+          className="form-control"
+          placeholder="Contraseña"
         />
-        <button className="register__btn" onClick={register}>
-          Register
-        </button>
-        <div>
-          Already have an account? <Link to="/">Login</Link> now.
+        <div className="d-grid">
+          <button type="submit" className="btn btn-danger" onClick={register}>
+            Register
+          </button>
         </div>
-      </div>
+        <div className="text-secondary">
+          ¿Ya tienes una cuenta?{' '}
+          <Link to="/" className="text-secondary">
+            Ingresa
+          </Link>{' '}
+          ahora.
+        </div>
+      </form>
     </div>
   );
 }

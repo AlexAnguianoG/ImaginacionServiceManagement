@@ -55,8 +55,6 @@
   height: 56px;
   padding: 0 16px;
   border-radius: 0.5rem;
-  background: #216ce7;
-  color: #f9f9f9;
   border: 0;
   font-family: inherit;
   font-size: 1rem;
@@ -67,7 +65,6 @@
 }
 
 .login-form > a {
-  color: #216ce7;
   font-size: 1rem;
   text-align: left;
   text-decoration: none;

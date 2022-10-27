@@ -43,7 +43,13 @@ const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
+    const props = {
+      name: name,
+      email: email,
+      // uid: user.uid,
+    };
     // Mutation here
+    console.log(props);
     console.log(user);
   } catch (err) {
     console.error(err);

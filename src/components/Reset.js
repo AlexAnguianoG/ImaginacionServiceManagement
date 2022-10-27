@@ -13,22 +13,33 @@ function Reset() {
     if (user) navigate('/inicio');
   }, [user, loading]);
   return (
-    <div className="reset">
-      <div className="reset__container">
+    <div className="reset-card">
+      <form className="reset-form">
+        <h2>Restablecimiento de contraseña</h2>
         <input
           type="text"
-          className="reset__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
+          className="form-control"
+          placeholder="Correo electrónico"
         />
-        <button className="reset__btn" onClick={() => sendPasswordReset(email)}>
-          Send password reset email
-        </button>
-        <div>
-          Don't have an account? <Link to="/registro">Register</Link> now.
+
+        <div className="d-grid">
+          <button
+            className="btn btn-danger"
+            onClick={() => sendPasswordReset(email)}
+          >
+            Enviar
+          </button>
         </div>
-      </div>
+        <div className="text-secondary">
+          ¿No tienes una cuenta?
+          <Link to="/registro" className="text-secondary">
+            Registrate
+          </Link>
+          ahora.
+        </div>
+      </form>
     </div>
   );
 }
