@@ -1,5 +1,7 @@
 import { gql } from '@apollo/client';
 
+// EMPLOYEES MUTATIONS
+
 export const CREATE_EMPLOYEE = gql`
   mutation createEmployee($createEmployeeInput: CreateEmployeeInput!) {
     createEmployee(createEmployeeInput: $createEmployeeInput) {
@@ -11,6 +13,8 @@ export const CREATE_EMPLOYEE = gql`
     }
   }
 `;
+
+// IMA SERVICES MUTATIONS
 
 export const CREATE_IMA_SERVICE = gql`
   mutation createImaService($createImaServiceInput: CreateImaServiceInput!) {

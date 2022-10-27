@@ -13,7 +13,6 @@ function Login() {
   const navigate = useNavigate();
   useEffect(() => {
     if (loading) {
-      // maybe trigger a loading screen
       return;
     }
     if (user) navigate('/servicios');
@@ -22,7 +21,6 @@ function Login() {
   return (
     <div className="login-card">
       <div className="login-form">
-        {/* <div>{data.imaServices[0].clientName}</div> */}
         <h2>Inicio de sesión</h2>
         <input
           type="text"
