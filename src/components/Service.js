@@ -44,7 +44,7 @@ function Service() {
             Cerrar sesión
           </button>
         </div>
-        <div scope="row">
+        <div>
           <span>Id del servicio:</span> {service.id}
         </div>
         <div>
