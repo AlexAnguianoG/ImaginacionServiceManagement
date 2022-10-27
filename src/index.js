@@ -6,12 +6,12 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  gql,
+  // gql,
 } from '@apollo/client';
 import reportWebVitals from './reportWebVitals';
 
-const client = new ApolloClient({
-  uri: 'http://localhost:3000/graphql',
+export const client = new ApolloClient({
+  uri: 'http://127.0.0.1:3000/graphql',
   cache: new InMemoryCache(),
 });
 
@@ -27,19 +27,17 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-// const client = ...
-
-client
-  .query({
-    query: gql`
-      query GetLocations {
-        locations {
-          id
-          name
-          description
-          photo
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result));
+// client
+//   .query({
+//     query: gql`
+//       query GetLocations {
+//         locations {
+//           id
+//           name
+//           description
+//           photo
+//         }
+//       }
+//     `,
+//   })
+//   .then((result) => console.log(result));

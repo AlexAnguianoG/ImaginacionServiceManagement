@@ -8,6 +8,9 @@ import {
   signOut,
 } from 'firebase/auth';
 import { getAnalytics } from 'firebase/analytics';
+// import { useMutation } from '@apollo/client';
+// import { CREATE_EMPLOYEE } from './graphql/mutations';
+// const [createEmployee, { data, loading, error }] = useMutation(CREATE_EMPLOYEE);
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -39,21 +42,15 @@ const logInWithEmailAndPassword = async (email, password) => {
 };
 
 // Sign up
-const registerWithEmailAndPassword = async (name, email, password) => {
+const registerWithEmailAndPassword = async (email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
-    const props = {
-      name: name,
-      email: email,
-      // uid: user.uid,
-    };
-    // Mutation here
-    console.log(props);
-    console.log(user);
+    return user;
   } catch (err) {
+    console.log(err);
     console.error(err);
-    alert(err.message);
+    // alert(err.message);
   }
 };
 

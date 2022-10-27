@@ -10,7 +10,7 @@ function Reset() {
   const navigate = useNavigate();
   useEffect(() => {
     if (loading) return;
-    if (user) navigate('/inicio');
+    if (user) navigate('/servicios');
   }, [user, loading]);
   return (
     <div className="reset-card">
@@ -33,10 +33,10 @@ function Reset() {
           </button>
         </div>
         <div className="text-secondary">
-          ¿No tienes una cuenta?
+          ¿No tienes una cuenta?{' '}
           <Link to="/registro" className="text-secondary">
             Registrate
-          </Link>
+          </Link>{' '}
           ahora.
         </div>
       </form>

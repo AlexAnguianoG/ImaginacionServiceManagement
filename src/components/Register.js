@@ -3,23 +3,43 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth, registerWithEmailAndPassword } from '../firebase';
 import '../styles/Register.css';
+import { CREATE_EMPLOYEE } from '../graphql/mutations';
+import { useMutation } from '../graphql/index';
 function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
-  const register = () => {
-    if (!name) alert('Please enter name');
-    registerWithEmailAndPassword(name, email, password);
+  const register = async () => {
+    if (!name) {
+      alert('Por favor ingrese un nombre');
+      return;
+    }
+    const user_data = await registerWithEmailAndPassword(email, password);
+    if (user_data != null) {
+      const createEmployeeInput = {
+        name: name,
+        authId: user_data.uid,
+        email: email,
+      };
+      const { data, errors } = await useMutation(CREATE_EMPLOYEE, {
+        createEmployeeInput: createEmployeeInput,
+      });
+      if (data) {
+        navigate('/servicios', { replace: true });
+      } else if (errors) {
+        console.log(errors);
+      }
+    }
   };
   useEffect(() => {
     if (loading) return;
-    if (user) navigate('/inicio', { replace: true });
+    if (user) navigate('/servicios', { replace: true });
   }, [user, loading]);
   return (
     <div className="register-card">
-      <form className="register-form">
+      <div className="register-form">
         <h2>Registro</h2>
         <input
           type="text"
@@ -43,8 +63,8 @@ function Register() {
           placeholder="Contraseña"
         />
         <div className="d-grid">
-          <button type="submit" className="btn btn-danger" onClick={register}>
-            Register
+          <button className="btn btn-danger" onClick={register}>
+            Registrar
           </button>
         </div>
         <div className="text-secondary">
@@ -54,7 +74,7 @@ function Register() {
           </Link>{' '}
           ahora.
         </div>
-      </form>
+      </div>
     </div>
   );
 }
