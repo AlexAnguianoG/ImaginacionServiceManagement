@@ -1,18 +1,18 @@
-.dashboard {
+.services {
   height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.dashboard__container {
+.services__container {
   display: flex;
   flex-direction: column;
   text-align: center;
   background-color: #dcdcdc;
   padding: 30px;
 }
-.dashboard__btn {
+.services__btn {
   padding: 10px;
   font-size: 18px;
   margin-top: 10px;
@@ -20,6 +20,6 @@
   color: white;
   background-color: black;
 }
-.dashboard div {
+.services div {
   margin-top: 7px;
 }

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import Reset from './components/Reset';
-import Dashboard from './components/Dashboard';
+import Services from './components/Services';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Route exact path="/" element={<Login />} />
           <Route exact path="/registro" element={<Register />} />
           <Route exact path="/cambiar-credenciales" element={<Reset />} />
-          <Route exact path="/inicio" element={<Dashboard />} />
+          <Route exact path="/inicio" element={<Services />} />
         </Routes>
       </div>
     </Router>
