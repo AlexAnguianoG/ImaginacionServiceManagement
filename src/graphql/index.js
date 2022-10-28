@@ -4,6 +4,7 @@ export const useQuery = async (query, params) => {
   const { data, errors } = await client.query({
     query,
     variables: params,
+    fetchPolicy: 'no-cache',
   });
 
   return { data, errors };

@@ -20,11 +20,10 @@ function CreateService() {
   const navigate = useNavigate();
   const createService = async () => {
     if (
-      !clientName &&
-      !clientEmail &&
-      !entryDate &&
-      !toPickup &&
-      !deviceModel &&
+      !clientName ||
+      !clientEmail ||
+      !entryDate ||
+      !deviceModel ||
       !deviceCondition
     ) {
       alert('Por favor rellene todos los campos obligatorios');
