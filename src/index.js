@@ -4,10 +4,9 @@ import './index.css';
 import App from './App';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import reportWebVitals from './reportWebVitals';
-import { env } from 'process';
 
 export const client = new ApolloClient({
-  uri: env.REACT_APP_IMAGINACION_API,
+  uri: process.env.REACT_APP_IMAGINACION_API,
   cache: new InMemoryCache(),
 });
 
