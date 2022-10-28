@@ -45,14 +45,14 @@ function CreateService() {
       createImaServiceInput: createImaServiceInput,
     });
     if (data) {
-      navigate('/servicios', { replace: true });
+      navigate('/servicios');
     } else if (errors) {
       console.log(errors);
     }
   };
   useEffect(() => {
     if (loading) return;
-    if (!user) navigate('/servicios', { replace: true });
+    if (!user) navigate('/login', { replace: true });
   }, [user, loading]);
   return (
     <div className="create-service-card">

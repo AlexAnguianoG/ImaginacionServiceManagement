@@ -64,9 +64,7 @@ function Services() {
             ))}
           </tbody>
         </table>
-        {!services.imaServices && (
-          <p className="mt-1 mb-5">No hay servicios registrados</p>
-        )}
+        {/* {!services && <p className="mt-1 mb-5">No hay servicios registrados</p>} */}
       </div>
     </div>
   );
