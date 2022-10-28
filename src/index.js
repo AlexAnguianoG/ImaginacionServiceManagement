@@ -2,16 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  // gql,
-} from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import reportWebVitals from './reportWebVitals';
+import { env } from 'process';
 
 export const client = new ApolloClient({
-  uri: 'https://ima-service-management-api-production.up.railway.app/graphql',
+  uri: env.REACT_APP_IMAGINACION_API,
   cache: new InMemoryCache(),
 });
 
@@ -26,18 +22,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-// client
-//   .query({
-//     query: gql`
-//       query GetLocations {
-//         locations {
-//           id
-//           name
-//           description
-//           photo
-//         }
-//       }
-//     `,
-//   })
-//   .then((result) => console.log(result));
