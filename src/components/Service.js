@@ -36,28 +36,29 @@ function Service() {
 
   return (
     service && (
-      <div className="services-card">
-        <div className="d-grid mb-5">
-          Iniciado sesión con:
-          <div>{user ? user.email : ''}</div>
-          <button className="btn btn-danger" onClick={logout}>
-            Cerrar sesión
-          </button>
-        </div>
+      <div className="service-card">
+        <h3 className="mb-4">Servicio #{service.id}</h3>
         <div>
-          <span>Id del servicio:</span> {service.id}
-        </div>
-        <div>
-          <span>Modelo del equipo:</span> {service.deviceModel}
+          <span>Estatus del servicio:</span> {getServiceStatus(service.status)}
         </div>
         <div>
           <span>Nombre del cliente:</span> {service.client.name}
         </div>
         <div>
-          <span>Correo del cliente:</span> {service.client.email}
+          <span>Correo electrónico del cliente:</span> {service.client.email}
         </div>
         <div>
-          <span>Comentario cliente:</span>{' '}
+          <span>Modelo del equipo:</span> {service.deviceModel}
+        </div>
+        <div>
+          <span>Condición del equipo:</span> {service.deviceCondition}
+        </div>
+        <div>
+          <span>Notas del equipo:</span>{' '}
+          {service.deviceNotes ? service.deviceNotes : '-'}
+        </div>
+        <div>
+          <span>Comentario del cliente:</span>{' '}
           {service.clientComment ? service.clientComment : '-'}
         </div>
         <div>
@@ -72,24 +73,13 @@ function Service() {
           {service.departureDate ? service.departureDate : '-'}
         </div>
         <div>
-          <span>Porcentaje de completado:</span>{' '}
-          {service.completedPercent ? service.completedPercent : '-'}
+          <span>Porcentaje de completado:</span> {service.completedPercent}%
         </div>
         <div>
           <span>Metodo de entrada del equipo:</span>{' '}
           {service.toPickup
             ? 'Recolección con el cliente'
             : 'Recibido en sucursal'}
-        </div>
-        <div>
-          <span>Condición del equipo:</span> {service.deviceCondition}
-        </div>
-        <div>
-          <span>Notas del equipo:</span>{' '}
-          {service.deviceNotes ? service.deviceNotes : '-'}
-        </div>
-        <div>
-          <span>Estatus del servicio:</span> {getServiceStatus(service.status)}
         </div>
       </div>
     )

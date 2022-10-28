@@ -1,10 +1,17 @@
 .service-card {
   position: relative;
   z-index: 3;
-  width: 30%;
+  width: 40%;
   margin: 0 20px;
-  padding: 70px 30px 44px;
+  padding: 35px 30px 40px;
   border-radius: 1.25rem;
   background: #fff;
+}
+
+.service-card > h3{
   text-align: center;
+}
+
+.service-card > div{
+  margin-bottom: 5px;
 }

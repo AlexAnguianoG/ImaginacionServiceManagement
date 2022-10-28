@@ -2,9 +2,6 @@
   box-sizing: border-box;
 }
 
-.app {
-  height: 100%;
-}
 
 @keyframes rotate {
   100% {
@@ -12,21 +9,31 @@
   }
 }
 
-.app{
+.repeated-bkg{
+  height: 100%;
   display: grid;
   place-items: center;
   margin: 0;
   padding: 0 24px;
-  background-image: url("background.svg");
+  background-image: url("./img/background.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: "Euclid Circular A";
   color: #000;
   animation: rotate 6s infinite alternate linear;
 }
 
-@media (width >= 500px) {
+.not-repeated-bkg{
+  height: 100%;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 50px 24px;
+  background: #c9c9c9;
+  color: #333333;
+}
+
+/* @media (width >= 500px) {
   .app {
     padding: 0;
   }
-}
+} */

@@ -57,79 +57,106 @@ function CreateService() {
   return (
     <div className="create-service-card">
       <div className="create-service-form">
-        <h2>Crear servicio</h2>
-        <input
-          type="text"
-          value={clientName}
-          onChange={(e) => setClientName(e.target.value)}
-          className="form-control"
-          placeholder="Nombre del cliente *"
-        />
-        <input
-          type="text"
-          value={clientEmail}
-          onChange={(e) => setClientEmail(e.target.value)}
-          className="form-control"
-          placeholder="Correo eletrónico del cliente *"
-        />
-        <input
-          type="text"
-          value={clientComment}
-          onChange={(e) => setClientComment(e.target.value)}
-          className="form-control"
-          placeholder="Comentario del cliente"
-        />
-        <input
-          type="text"
-          value={employeeNotes}
-          onChange={(e) => setEmployeeNotes(e.target.value)}
-          className="form-control"
-          placeholder="Notas del empleado"
-        />
-        <input
-          type="text"
-          value={entryDate}
-          onChange={(e) => setEntryDate(e.target.value)}
-          className="form-control"
-          placeholder="Fecha de entrada *"
-        />
-        <input
-          type="text"
-          value={deviceModel}
-          onChange={(e) => setDeviceModel(e.target.value)}
-          className="form-control"
-          placeholder="Modelo del equipo *"
-        />
-        <input
-          type="text"
-          value={deviceCondition}
-          onChange={(e) => setDeviceCondition(e.target.value)}
-          className="form-control"
-          placeholder="Condición del equipo *"
-        />
-        <input
-          type="text"
-          value={deviceNotes}
-          onChange={(e) => setDeviceNotes(e.target.value)}
-          className="form-control"
-          placeholder="Notas del equipo"
-        />
-        <div className="form-check">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            value={toPickup}
-            id="flexCheckDefault"
-            onChange={() => setToPickup(!toPickup)}
-          />
-          <label className="form-check-label">
-            El equipo se recolectó con el cliente
-          </label>
-        </div>
-        <div className="d-grid">
-          <button className="btn btn-danger" onClick={createService}>
-            Crear
-          </button>
+        <h3 className="mb-3">Crear servicio</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                value={clientName}
+                onChange={(e) => setClientName(e.target.value)}
+                className="form-control"
+                placeholder="Nombre del cliente *"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                value={clientEmail}
+                onChange={(e) => setClientEmail(e.target.value)}
+                className="form-control"
+                placeholder="Correo eletrónico del cliente *"
+              />
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+              <input
+                type="text"
+                value={entryDate}
+                onChange={(e) => setEntryDate(e.target.value)}
+                className="form-control"
+                placeholder="Fecha de entrada *"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                value={deviceModel}
+                onChange={(e) => setDeviceModel(e.target.value)}
+                className="form-control"
+                placeholder="Modelo del equipo *"
+              />
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+              <input
+                type="text"
+                value={deviceCondition}
+                onChange={(e) => setDeviceCondition(e.target.value)}
+                className="form-control"
+                placeholder="Condición del equipo *"
+              />
+            </div>
+            <div class="w-100"></div>
+            <div class="col-12">
+              <textarea
+                rows="2"
+                value={deviceNotes}
+                onChange={(e) => setDeviceNotes(e.target.value)}
+                className="form-control"
+                placeholder="Notas del equipo"
+              />
+            </div>
+            <div class="col-12">
+              <textarea
+                rows="2"
+                value={clientComment}
+                onChange={(e) => setClientComment(e.target.value)}
+                className="form-control"
+                placeholder="Comentario del cliente"
+              />
+            </div>
+            <div class="col-12">
+              <textarea
+                rows="2"
+                value={employeeNotes}
+                onChange={(e) => setEmployeeNotes(e.target.value)}
+                className="form-control"
+                placeholder="Notas del empleado"
+              />
+            </div>
+            <div class="col-12">
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value={toPickup}
+                  id="flexCheckDefault"
+                  onChange={() => setToPickup(!toPickup)}
+                />
+                <label className="form-check-label">
+                  El equipo se recolectó con el cliente
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div className="d-grid mt-3">
+                <button className="btn btn-danger" onClick={createService}>
+                  Crear
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

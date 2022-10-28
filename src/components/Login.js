@@ -37,7 +37,7 @@ function Login() {
           placeholder="Contraseña"
         />
         <div>
-          <Link to="/cambiar-credenciales" className="text-secondary">
+          <Link to="/cambiar-contraseña" className="text-secondary">
             ¿Se te olvidó la contraseña?
           </Link>
         </div>

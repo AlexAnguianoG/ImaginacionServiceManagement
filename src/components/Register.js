@@ -69,7 +69,7 @@ function Register() {
         </div>
         <div className="text-secondary">
           ¿Ya tienes una cuenta?{' '}
-          <Link to="/" className="text-secondary">
+          <Link to="/login" className="text-secondary">
             Ingresa
           </Link>{' '}
           ahora.

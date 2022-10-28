@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Services.css';
-import { auth, logout } from '../firebase';
 import { GET_IMA_SERVICES } from '../graphql/queries';
 import { useQuery } from '../graphql/index';
 function Services() {
   const [services, setServices] = useState([]);
-  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
   const getServiceStatus = (status) => {
     switch (status) {
@@ -18,8 +15,6 @@ function Services() {
     }
   };
   useEffect(() => {
-    if (loading) return;
-    if (!user) return navigate('/');
     async function fetchServices() {
       const { data, errors } = await useQuery(GET_IMA_SERVICES);
       if (data) {
@@ -29,16 +24,10 @@ function Services() {
       }
     }
     fetchServices();
-  }, [user, loading]);
+  }, []);
   return (
     <div className="services-card">
-      <div className="d-grid mb-5">
-        Iniciado sesión con:
-        <div>{user ? user.email : ''}</div>
-        <button className="btn btn-danger" onClick={logout}>
-          Cerrar sesión
-        </button>
-      </div>
+      <h3 className="mb-4">Servicios</h3>
       <table className="table">
         <thead>
           <tr>
@@ -49,6 +38,7 @@ function Services() {
             <th scope="col">Fecha salida</th>
             <th scope="col">Falla/Motivo</th>
             <th scope="col">Estatus</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -73,6 +63,7 @@ function Services() {
           ))}
         </tbody>
       </table>
+      {!services && <p className="mt-1 mb-5">No hay servicios regsitrados</p>}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { auth, sendPasswordReset } from '../firebase';
 import '../styles/Reset.css';
-function Reset() {
+function ResetPassword() {
   const [email, setEmail] = useState('');
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
@@ -43,4 +43,4 @@ function Reset() {
     </div>
   );
 }
-export default Reset;
+export default ResetPassword;

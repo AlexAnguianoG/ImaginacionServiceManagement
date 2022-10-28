@@ -3,7 +3,7 @@
   z-index: 3;
   width: 100%;
   margin: 0 20px;
-  padding: 70px 30px 44px;
+  padding: 35px 30px;
   border-radius: 1.25rem;
   background: #fff;
   text-align: center;
@@ -12,41 +12,33 @@
 @media (width >= 500px) {
   .create-service-card {
     margin: 0;
-    width: 400px;
+    width: 600px;
   }
 }
 
-.create-service-card > h2 {
-  font-size: 36px;
-  font-weight: 600;
-  margin: 0 0 12px;
+.create-service-form .col, 
+.create-service-form .col-12 {
+  padding: 0 8px;
 }
 
-.create-service-card > h3 {
-  color: rgba(0, 0, 0, 0.38);
-  margin: 0 0 30px;
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.create-service-form {
-  width: 100%;
-  margin: 0;
-  display: grid;
-  gap: 16px;
-}
-
-.create-service-form > input[type=text],
+.create-service-form input[type=text],
 .create-service-form > button {
   width: 100%;
-  height: 56px;
+  height: 46px;
 }
 
-.create-service-form > input[type=text] {
+.create-service-form input[type=text],
+.create-service-form textarea
+ {
   border: 2px solid #ebebeb;
   font-family: inherit;
   font-size: 16px;
-  padding: 0 16px;
+  padding: 6px 16px;
+  margin: 6px 0;
+}
+
+.create-service-form .form-check {
+  text-align: start;
 }
 
 .create-service-form > button {
@@ -62,11 +54,4 @@
   text-align: center;
   letter-spacing: 2px;
   transition: all 0.375s;
-}
-
-.create-service-form > a {
-  font-size: 1rem;
-  text-align: left;
-  text-decoration: none;
-  margin-bottom: 6px;
 }
