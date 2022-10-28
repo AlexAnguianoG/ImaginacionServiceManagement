@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../styles/Service.css';
-import { auth, logout } from '../firebase';
+import { auth } from '../firebase';
 import { GET_IMA_SERVICE } from '../graphql/queries';
 import { useQuery } from '../graphql/index';
 function Service() {

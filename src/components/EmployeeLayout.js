@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -61,7 +61,7 @@ function EmployeeLayout() {
           </div>
         </nav>
       </nav>
-      <div className="not-repeated-bkg">
+      <div className="repeated-bkg">
         <Outlet />
       </div>
     </>

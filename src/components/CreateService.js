@@ -58,9 +58,9 @@ function CreateService() {
     <div className="create-service-card">
       <div className="create-service-form">
         <h3 className="mb-3">Crear servicio</h3>
-        <div class="container">
-          <div class="row">
-            <div class="col">
+        <div className="container">
+          <div className="row">
+            <div className="col">
               <input
                 type="text"
                 value={clientName}
@@ -69,7 +69,7 @@ function CreateService() {
                 placeholder="Nombre del cliente *"
               />
             </div>
-            <div class="col">
+            <div className="col">
               <input
                 type="text"
                 value={clientEmail}
@@ -78,8 +78,8 @@ function CreateService() {
                 placeholder="Correo eletrónico del cliente *"
               />
             </div>
-            <div class="w-100"></div>
-            <div class="col">
+            <div className="w-100"></div>
+            <div className="col">
               <input
                 type="text"
                 value={entryDate}
@@ -88,7 +88,7 @@ function CreateService() {
                 placeholder="Fecha de entrada *"
               />
             </div>
-            <div class="col">
+            <div className="col">
               <input
                 type="text"
                 value={deviceModel}
@@ -97,8 +97,8 @@ function CreateService() {
                 placeholder="Modelo del equipo *"
               />
             </div>
-            <div class="w-100"></div>
-            <div class="col">
+            <div className="w-100"></div>
+            <div className="col">
               <input
                 type="text"
                 value={deviceCondition}
@@ -107,8 +107,8 @@ function CreateService() {
                 placeholder="Condición del equipo *"
               />
             </div>
-            <div class="w-100"></div>
-            <div class="col-12">
+            <div className="w-100"></div>
+            <div className="col-12">
               <textarea
                 rows="2"
                 value={deviceNotes}
@@ -117,7 +117,7 @@ function CreateService() {
                 placeholder="Notas del equipo"
               />
             </div>
-            <div class="col-12">
+            <div className="col-12">
               <textarea
                 rows="2"
                 value={clientComment}
@@ -126,7 +126,7 @@ function CreateService() {
                 placeholder="Comentario del cliente"
               />
             </div>
-            <div class="col-12">
+            <div className="col-12">
               <textarea
                 rows="2"
                 value={employeeNotes}
@@ -135,7 +135,7 @@ function CreateService() {
                 placeholder="Notas del empleado"
               />
             </div>
-            <div class="col-12">
+            <div className="col-12">
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -149,7 +149,7 @@ function CreateService() {
                 </label>
               </div>
             </div>
-            <div class="col-12">
+            <div className="col-12">
               <div className="d-grid mt-3">
                 <button className="btn btn-danger" onClick={createService}>
                   Crear
