@@ -18,7 +18,7 @@
 
 .create-service-form .col, 
 .create-service-form .col-12 {
-  padding: 0 8px;
+  padding: 0 5px;
 }
 
 .create-service-form input[type=text],
@@ -39,6 +39,7 @@
 
 .create-service-form .form-check {
   text-align: start;
+  margin: 4px 2px 15px;
 }
 
 .create-service-form > button {

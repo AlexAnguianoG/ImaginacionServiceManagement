@@ -14,7 +14,7 @@
   display: none;
 }
 
-@media only screen and (min-width: 400px) {
+@media (width >= 600px) {
   .navbar-logo-text {
     display: block;
   }
@@ -25,7 +25,7 @@
   transition: 0.3s;
 }
 
-@media only screen and (min-width: 600px) {
+@media (width >= 600px) {
   .navbar-menu {
     flex: 1 1 auto;
     justify-content: center;
@@ -42,14 +42,11 @@
   cursor: pointer;
 }
 
-
 .navbar-menu  button.active, .navbar-menu  button:hover{
   opacity: 1;
 }
 
-@media only screen and (min-width: 600px) {
-  .navbar-menu > div:last-child {
-    position: absolute;
-    right: 20px;
-  }
+.navbar-menu > div:last-child {
+  position: absolute;
+  right: 20px;
 }

@@ -1,10 +1,21 @@
 .services-card {
   position: relative;
   z-index: 3;
-  width: 70%;
+  width: 80%;
   margin: 0 20px;
   padding: 35px 30px 15px;
   border-radius: 1.25rem;
   background: #fff;
   text-align: center;
+}
+
+@media (width <= 1000px) {
+  .services-card {
+    width: 90%;
+    margin: 0;
+  }
+}
+
+.services-card .table-container {
+  overflow: auto;
 }

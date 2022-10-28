@@ -3,20 +3,23 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth, logInWithEmailAndPassword } from '../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import '../styles/Login.css';
-// import { useQuery } from '@apollo/client';
-// import { GET_IMA_SERVICES } from '../graphql/queries';
+
 function Login() {
-  // const { error, data } = useQuery(GET_IMA_SERVICES);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
-  useEffect(() => {
-    if (loading) {
+  const login = async (emailInput, passwordInput) => {
+    if (!emailInput || !passwordInput) {
+      alert('Por favor rellene los campos');
       return;
     }
+    await logInWithEmailAndPassword(emailInput, passwordInput);
+  };
+  useEffect(() => {
+    if (loading) return;
+
     if (user) navigate('/servicios');
-    // if (error) return <p>Error :(</p>;
   }, [user, loading]);
   return (
     <div className="login-card">
@@ -43,7 +46,7 @@ function Login() {
         </div>
         <div className="d-grid">
           <button
-            onClick={() => logInWithEmailAndPassword(email, password)}
+            onClick={() => login(email, password)}
             className="btn btn-danger"
           >
             Ingresar

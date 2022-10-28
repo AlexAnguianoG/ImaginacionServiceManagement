@@ -141,7 +141,6 @@ function CreateService() {
                   className="form-check-input"
                   type="checkbox"
                   value={toPickup}
-                  id="flexCheckDefault"
                   onChange={() => setToPickup(!toPickup)}
                 />
                 <label className="form-check-label">
