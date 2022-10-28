@@ -11,7 +11,7 @@ import {
 import reportWebVitals from './reportWebVitals';
 
 export const client = new ApolloClient({
-  uri: 'http://127.0.0.1:3001/graphql',
+  uri: 'https://ima-service-management-api-production.up.railway.app/graphql',
   cache: new InMemoryCache(),
 });
 
