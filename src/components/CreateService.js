@@ -47,7 +47,7 @@ function CreateService() {
       deviceCondition: deviceCondition,
       deviceNotes: deviceNotes,
       deviceSerialNumber: deviceSerialNumber,
-      employeeId: employeeId,
+      employeeId: parseInt(employeeId),
     };
     const { data, errors } = await useMutation(CREATE_IMA_SERVICE, {
       createImaServiceInput: createImaServiceInput,
@@ -108,7 +108,7 @@ function CreateService() {
             </div>
             <div className="col">
               <input
-                type="text"
+                type="date"
                 value={entryDate}
                 onChange={(e) => setEntryDate(e.target.value)}
                 className="form-control"

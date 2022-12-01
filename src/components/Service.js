@@ -42,10 +42,19 @@ function Service() {
           <span>Estatus del servicio:</span> {getServiceStatus(service.status)}
         </div>
         <div>
+          <span>Id del empleado:</span> {(service.employeeId)}
+        </div>
+        <div>
           <span>Nombre del cliente:</span> {service.client.name}
         </div>
         <div>
+          <span>Teléfono del cliente:</span> {service.client.phone}
+        </div>
+        <div>
           <span>Correo electrónico del cliente:</span> {service.client.email}
+        </div>
+        <div>
+          <span>Número de serie del equipo:</span> {service.deviceSerialNumber}
         </div>
         <div>
           <span>Modelo del equipo:</span> {service.deviceModel}

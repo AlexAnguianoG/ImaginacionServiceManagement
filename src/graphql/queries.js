@@ -35,7 +35,10 @@ export const GET_IMA_SERVICE = gql`
         id
         name
         email
+        phone
       }
+      employeeId
+      deviceSerialNumber
     }
   }
 `;
