@@ -40,6 +40,9 @@ export const GET_IMA_SERVICE = gql`
       employeeId
       deviceSerialNumber
       cost
+      invoiceId
+      invoiceNote
+      diagnosis
     }
   }
 `;
