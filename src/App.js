@@ -10,6 +10,8 @@ import ResetPassword from './components/ResetPassword';
 import Services from './components/Services';
 import Service from './components/Service';
 import CreateService from './components/CreateService';
+import SearchService from "./components/SearchService";
+import ClientService from "./components/ClientService";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route exact path="/servicios" element={<Services />} />
           <Route exact path="/servicio/:id" element={<Service />} />
         </Route>
+        <Route exact path="/buscar-servicio" element={<SearchService />} />
+        <Route exact path="/servicio-cliente" element={<ClientService />} />
       </Routes>
     </Router>
   );
