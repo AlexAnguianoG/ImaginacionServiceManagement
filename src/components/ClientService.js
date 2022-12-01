@@ -105,7 +105,6 @@ function ClientService() {
               </div>
             )
           }
-          
           <div className="mt-4 text-center">
             <Link to="/buscar-servicio" className="text-secondary">
               Buscar otro servicio
