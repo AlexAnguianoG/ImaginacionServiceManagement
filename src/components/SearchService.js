@@ -31,7 +31,7 @@ function SearchService() {
             value={clientPhone}
             onChange={(e) => setClientPhone(e.target.value)}
             className="form-control"
-            placeholder="Télefono"
+            placeholder="Teléfono"
           />
           <div className="d-grid">
             <button
