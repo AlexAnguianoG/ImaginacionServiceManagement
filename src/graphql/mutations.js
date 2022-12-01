@@ -39,3 +39,27 @@ export const CREATE_IMA_SERVICE = gql`
     }
   }
 `;
+
+export const UPDATE_IMA_SERVICE = gql`
+  mutation updateImaService($updateImaServiceInput: UpdateImaServiceInput!) {
+    updateImaService(updateImaServiceInput: $updateImaServiceInput) {
+      id
+      clientComment
+      employeeNotes
+      status
+      entryDate
+      departureDate
+      completedPercent
+      toPickup
+      deviceModel
+      deviceCondition
+      deviceNotes
+      clientId
+      client {
+        id
+        name
+        email
+      }
+    }
+  }
+`;
