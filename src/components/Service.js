@@ -22,7 +22,7 @@ function Service() {
   const [completedPercent, setCompletedPercent] = useState('');
   const [cost, setCost] = useState('');
   const [diagnosis, setDiagnosis] = useState('');
-  const [invoiceId, setInvoiceid] = useState('');
+  const [invoiceId, setInvoiceId] = useState('');
   const [invoiceNote, setInvoiceNote] = useState('');
   const [status, setStatus] = useState('');
   const [user, loading] = useAuthState(auth);
@@ -104,7 +104,7 @@ function Service() {
         setCompletedPercent(data.imaService.completedPercent)
         setCost(data.imaService.cost)
         setDiagnosis(data.imaService.diagnosis)
-        setInvoiceid(data.imaService.invoiceid)
+        setInvoiceId(data.imaService.invoiceId)
         setInvoiceNote(data.imaService.invoiceNote)
         setStatus(data.imaService.status)
       } else if (errors) {
@@ -178,7 +178,7 @@ function Service() {
                       <input
                         type="text"
                         value={invoiceId}
-                        onChange={(e) => setInvoiceid(e.target.value)}
+                        onChange={(e) => setInvoiceId(e.target.value)}
                         className="form-control"
                         placeholder="Folio de cotización"
                       />
@@ -338,10 +338,31 @@ function Service() {
                 <div>
                   <span>Porcentaje de completado:</span> {service.completedPercent}%
                 </div>
-                <div>
-                  <span>Costo:</span> {' '}
-                    {service.cost !== 0 ? '$' + service.cost : 'Esperando diagnóstico'}
-                </div>
+                {
+                  (service.status == 'diagnosis'  || service.status == 'in repair' || service.status == 'completed') && (
+                    <div>
+                      <div>
+                        <span>Diagnóstico:</span> {service.diagnosis}
+                      </div>
+                      <div>
+                        <span>Costo:</span> {' '}
+                        {service.cost !== 0 ? '$' + service.cost : 'Esperando diagnóstico'}
+                      </div>
+                    </div>
+                  )
+                }
+                {
+                  (service.status == 'valued' || service.status == 'in repair' || service.status == 'completed') && (
+                    <div>
+                      <div>
+                        <span>Folio de cotización:</span> {service.invoiceId}
+                      </div>
+                      <div>
+                        <span>Nota de cotización:</span> {service.invoiceNote}
+                      </div>
+                    </div>
+                  )
+                }
                 <div>
                   <span>Metodo de entrada del equipo:</span>{' '}
                   {service.toPickup
