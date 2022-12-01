@@ -80,10 +80,32 @@ function ClientService() {
           <div>
             <span>Porcentaje de completado:</span> {service.completedPercent}%
           </div>
-          <div>
-            <span>Costo:</span> {' '}
-            {service.cost !== 0 ? '$' + service.cost : 'Esperando diagnóstico'}
-          </div>
+          {
+            (service.status == 'diagnosis'  || service.status == 'in repair' || service.status == 'completed') && (
+              <div>
+                <div>
+                  <span>Diagnóstico:</span> {service.diagnosis}
+                </div>
+                <div>
+                  <span>Costo:</span> {' '}
+                  {service.cost !== 0 ? '$' + service.cost : 'Esperando diagnóstico'}
+                </div>
+              </div>
+            )
+          }
+          {
+            (service.status == 'valued' || service.status == 'in repair' || service.status == 'completed') && (
+              <div>
+                <div>
+                  <span>Folio de cotización:</span> {service.invoiceId}
+                </div>
+                <div>
+                  <span>Nota de cotización:</span> {service.invoiceNote}
+                </div>
+              </div>
+            )
+          }
+          
           <div className="mt-4 text-center">
             <Link to="/buscar-servicio" className="text-secondary">
               Buscar otro servicio
