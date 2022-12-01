@@ -11,6 +11,16 @@ function ClientService() {
     switch (status) {
       case 'pending':
         return 'Por revisar';
+      case 'diagnosis':
+        return 'En diagnóstico';
+      case 'valued':
+        return 'Cotizado';
+      case 'client authorized':
+        return 'Autorizado por el cliente';
+      case 'in repair':
+        return 'En reparación';
+      case 'completed':
+        return 'Completado';
       default:
         return 'Por revisar';
     }

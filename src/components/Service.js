@@ -14,6 +14,16 @@ function Service() {
     switch (status) {
       case 'pending':
         return 'Por revisar';
+      case 'diagnosis':
+        return 'En diagnóstico';
+      case 'valued':
+        return 'Cotizado';
+      case 'client authorized':
+        return 'Autorizado por el cliente';
+      case 'in repair':
+        return 'En reparación';
+      case 'completed':
+        return 'Completado';
       default:
         return 'Por revisar';
     }
@@ -83,6 +93,10 @@ function Service() {
         </div>
         <div>
           <span>Porcentaje de completado:</span> {service.completedPercent}%
+        </div>
+        <div>
+          <span>Costo:</span> {' '}
+            {service.cost !== 0 ? '$' + service.cost : 'Esperando diagnóstico'}
         </div>
         <div>
           <span>Metodo de entrada del equipo:</span>{' '}
