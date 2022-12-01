@@ -8,6 +8,7 @@ import { useMutation } from '../graphql/index';
 function CreateService() {
   const [clientName, setClientName] = useState('');
   const [clientEmail, setClientEmail] = useState('');
+  const [clientPhone, setClientPhone] = useState('');
   const [clientComment, setClientComment] = useState('');
   const [employeeNotes, setEmployeeNotes] = useState('');
   const [entryDate, setEntryDate] = useState('');
@@ -15,6 +16,8 @@ function CreateService() {
   const [deviceModel, setDeviceModel] = useState('');
   const [deviceCondition, setDeviceCondition] = useState('');
   const [deviceNotes, setDeviceNotes] = useState('');
+  const [deviceSerialNumber, setDeviceSerialNumber] = useState('');
+  const [employeeId, setEmployeeId] = useState('');
 
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
@@ -22,9 +25,12 @@ function CreateService() {
     if (
       !clientName ||
       !clientEmail ||
+      !clientPhone ||
       !entryDate ||
       !deviceModel ||
-      !deviceCondition
+      !deviceCondition ||
+      !deviceSerialNumber || 
+      !employeeId
     ) {
       alert('Por favor rellene todos los campos obligatorios');
       return;
@@ -32,6 +38,7 @@ function CreateService() {
     const createImaServiceInput = {
       clientName: clientName,
       clientEmail: clientEmail,
+      clientPhone: clientPhone,
       clientComment: clientComment,
       employeeNotes: employeeNotes,
       entryDate: entryDate,
@@ -39,6 +46,8 @@ function CreateService() {
       deviceModel: deviceModel,
       deviceCondition: deviceCondition,
       deviceNotes: deviceNotes,
+      deviceSerialNumber: deviceSerialNumber,
+      employeeId: employeeId,
     };
     const { data, errors } = await useMutation(CREATE_IMA_SERVICE, {
       createImaServiceInput: createImaServiceInput,
@@ -62,6 +71,16 @@ function CreateService() {
             <div className="col">
               <input
                 type="text"
+                value={employeeId}
+                onChange={(e) => setEmployeeId(e.target.value)}
+                className="form-control"
+                placeholder="Id del empleado *"
+              />
+            </div>
+            <div className="w-100"></div>
+            <div className="col">
+              <input
+                type="text"
                 value={clientName}
                 onChange={(e) => setClientName(e.target.value)}
                 className="form-control"
@@ -81,10 +100,29 @@ function CreateService() {
             <div className="col">
               <input
                 type="text"
+                value={clientPhone}
+                onChange={(e) => setClientPhone(e.target.value)}
+                className="form-control"
+                placeholder="Teléfono celular del cliente *"
+              />
+            </div>
+            <div className="col">
+              <input
+                type="text"
                 value={entryDate}
                 onChange={(e) => setEntryDate(e.target.value)}
                 className="form-control"
                 placeholder="Fecha de entrada *"
+              />
+            </div>
+            <div className="w-100"></div>
+            <div className="col">
+              <input
+                type="text"
+                value={deviceSerialNumber}
+                onChange={(e) => setDeviceSerialNumber(e.target.value)}
+                className="form-control"
+                placeholder="Número de serie del equipo *"
               />
             </div>
             <div className="col">
